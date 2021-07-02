@@ -13,9 +13,11 @@ public class GetOnlinePaymentResponse {
     protected OnlinePaymentDetail onlinePaymentDetail;
 
     public OnlinePaymentDetail getOnlinePaymentDetail() {
+
         return onlinePaymentDetail;
     }
     public void setOnlinePaymentDetail(OnlinePaymentDetail value) {
+
         this.onlinePaymentDetail = value;
     }
 

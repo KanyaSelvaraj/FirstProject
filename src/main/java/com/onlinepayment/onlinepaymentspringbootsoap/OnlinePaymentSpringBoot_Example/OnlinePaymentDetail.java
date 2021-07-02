@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OnlinePaymentDetail", propOrder = {
+
         "RRN","BANK_CODE","CARDNUMBER","LANACCOUNT",
         "CUSTID","ACTIVITYFLAG","STATUSRRN","AMOUNT",
         "LASTPAYDATE","TRANSNUMBER","REINSTATED"
@@ -40,7 +41,6 @@ public class OnlinePaymentDetail {
     public static OnlinePaymentDetail get(String name) {
         return get(name);
     }
-
 
     public String getRRN() {
 

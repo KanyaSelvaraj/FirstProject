@@ -1,32 +1,24 @@
 package com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "",propOrder = {
-        "CARDNUMBER"
+        "RRN"
 })
 @XmlRootElement(name = "GetOnlinePaymentRequest")
 public class GetOnlinePaymentRequest {
 
-    protected int OnlinePayment;
+    @XmlElement(required = true)
+    protected String RRN;
 
-    public int getOnlinePayment(){
-
-        return OnlinePayment;
+    public String getRRN(){
+        return RRN;
     }
 
-    public void setOnlinePayment(int OnlinePayment) {
 
-        this.OnlinePayment = OnlinePayment;
-    }
 
-    public String getRRN() {
-        return  getRRN();
-    }
+
 }
 
 

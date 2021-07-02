@@ -6,7 +6,7 @@
     <xs:element name="GetOnlinePaymentRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name= "OnlinePayment" type="xs:string"/>
+                <xs:element name= "RRN" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -34,7 +34,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="Payment">
+    <xs:simpleType name="PaymentDetail">
         <xs:restriction base="xs:string">
             <xs:enumeration value="RRN"/>
             <xs:enumeration value="CUSTID"/>

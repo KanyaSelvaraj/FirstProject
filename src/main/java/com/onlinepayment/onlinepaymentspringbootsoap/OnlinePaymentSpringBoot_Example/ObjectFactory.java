@@ -8,14 +8,18 @@ public class ObjectFactory {
     public ObjectFactory(){
     }
     public GetOnlinePaymentResponse createGetOnlinePaymentResponse() {
+
         return new GetOnlinePaymentResponse();
     }
     public OnlinePaymentDetail createOnlinePaymentDetail() {
+
         return new OnlinePaymentDetail();
     }
     public GetOnlinePaymentRequest createGetOnlinePaymentRequest() {
+
         return new GetOnlinePaymentRequest() ;
     }
+
 
 }
 
