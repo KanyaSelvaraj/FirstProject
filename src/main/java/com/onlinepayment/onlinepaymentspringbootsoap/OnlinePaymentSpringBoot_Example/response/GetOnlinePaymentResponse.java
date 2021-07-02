@@ -1,4 +1,4 @@
-package com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example;
+package com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.response;
 
 import javax.xml.bind.annotation.*;
 

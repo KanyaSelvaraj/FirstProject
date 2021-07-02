@@ -1,8 +1,5 @@
 package com.onlinepayment.onlinepaymentspringbootsoap.OnlinepaymentSpringbootExample.Endpoint;
 
-import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.GetOnlinePaymentRequest;
-import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.GetOnlinePaymentResponse;
-import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.OnlinePaymentDetail;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;

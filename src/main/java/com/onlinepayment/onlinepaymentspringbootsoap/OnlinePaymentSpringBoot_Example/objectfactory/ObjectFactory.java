@@ -1,4 +1,4 @@
-package com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example;
+package com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.objectfactory;
 
 import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.request.GetOnlinePaymentRequest;
 import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.response.GetOnlinePaymentResponse;
