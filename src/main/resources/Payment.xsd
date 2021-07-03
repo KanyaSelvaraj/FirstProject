@@ -3,22 +3,22 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://onlinepayment.com/spring_boot_soap_example"
            targetNamespace="http://onlinepayment.com/spring_boot_soap_example" elementFormDefault="qualified">
 
-    <xs:element name="GetOnlinePaymentRequest">
+    <xs:element name="getOnlinePaymentRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name= "RRN" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="GetOnlinePaymentResponse">
+    <xs:element name="getOnlinePaymentResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name= "OnlinePaymentDetail" type="tns:OnlinePaymentDetail"/>
+                <xs:element name= "onlinePaymentDetail" type="tns:onlinePaymentDetail"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="OnlinePaymentDetail">
+    <xs:complexType name="onlinePaymentDetail">
         <xs:sequence>
             <xs:element name="RRN" type="xs:string"/>
             <xs:element name="BANK_CODE" type="xs:string"/>
@@ -34,7 +34,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="PaymentDetail">
+    <xs:simpleType name="paymentDetail">
         <xs:restriction base="xs:string">
             <xs:enumeration value="RRN"/>
             <xs:enumeration value="CUSTID"/>

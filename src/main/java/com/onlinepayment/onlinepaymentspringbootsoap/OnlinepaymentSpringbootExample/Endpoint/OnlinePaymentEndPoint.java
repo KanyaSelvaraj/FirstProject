@@ -1,16 +1,23 @@
-package com.onlinepayment.onlinepaymentspringbootsoap.OnlinepaymentSpringbootExample.Endpoint;
+package com.onlinepayment.onlinepaymentspringbootsoap.OnlinepaymentSpringbootExample.endpoint;
 
+
+import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.onlinepaymentdetail.OnlinePaymentDetail;
+import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.request.GetOnlinePaymentRequest;
+import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.response.GetOnlinePaymentResponse;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+
 @Endpoint
 public class OnlinePaymentEndPoint {
 
+    //namespace = "http://onlinepayment.com/spring_boot_soap_example",
 
 
-      @PayloadRoot(namespace = "http://onlinepayment.com/spring_boot_soap_example", localPart = "GetOnlinPaymentRequest")
+
+      @PayloadRoot(localPart = "getOnlinePaymentRequest")
       @ResponsePayload
       public GetOnlinePaymentResponse processOnlinePaymentRequest(@RequestPayload GetOnlinePaymentRequest request){
           GetOnlinePaymentResponse response = new GetOnlinePaymentResponse();

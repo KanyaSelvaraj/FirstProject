@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://in28minutes.com/students" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://in28minutes.com/students" targetNamespace="http://in28minutes.com/students">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://onlinepayment.com/spring_boot_soap_example">
+
+            <xs:element name="getOnlinePaymentRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="RRN" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="getOnlinePaymentResponse">
+                <xs:simpleType>
+                    <xs:restriction>
+                        <xs:enumeration value="paymentDetail">
+                        </xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:complexType name="onlinePaymentDetail">
+                <xs:sequence>
+                    <xs:element name="RRN" type="xs:string"/>
+                    <xs:element name="BANK_CODE" type="xs:string"/>
+                    <xs:element name="CARDNUMBER" type="xs:int"/>
+                    <xs:element name="LANACCOUNT" type="xs:string"/>
+                    <xs:element name="CUSTID" type="xs:int"/>
+                    <xs:element name="ACTIVITYFLAG" type="xs:string"/>
+                    <xs:element name="STATUSRRN" type="xs:string"/>
+                    <xs:element name="AMOUNT" type="xs:int"/>
+                    <xs:element name="LASTPAYDATE" type="xs:int"/>
+                    <xs:element name="TRANSNUMBER" type="xs:string"/>
+                    <xs:element name="REINSTATED" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:simpleType name="paymentDetail">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="RRN"/>
+                    <xs:enumeration value="CUSTID"/>
+                    <xs:enumeration value="CARDNUMBER"/>
+                    <xs:enumeration value="MSGDESCRIPTION"/>
+                    <xs:enumeration value="RESPONSECODE"/>
+                    <xs:enumeration value="AVAILLIMIT"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getOnlinePaymentResponse">
+        <wsdl:part element="tns:getOnlinePaymentResponse" name="getOnlinePaymentResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getOnlinePaymentRequest">
+        <wsdl:part element="tns:getOnlinePaymentRequest" name="getOnlinePaymentRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="onlinePaymentPort">
+        <wsdl:operation name="getPaymentDetail">
+            <wsdl:input message="tns:getOnlinePaymentRequest" name="getOnlinePaymentRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:getOnlinePaymentResponse" name="getOnlinePaymentResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="onlinePaymentSOAP" type="tns:onlinePayment">
+        <soap:binding  transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getPaymentDetail">
+            <soap:operation soapAction="http://onlinepayment.com/spring_boot_soap_example"/>
+            <wsdl:input name="getOnlinePaymentRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getOnlinePaymentResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="onlinePayment">
+        <wsdl:port binding="tns:onlinePaymentSOAP" name="onlinePaymentSOAP">
+            <soap:address location="http://localhost:8080/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

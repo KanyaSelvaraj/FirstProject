@@ -21,22 +21,22 @@ public class OnlinePaymentConfig extends WsConfigurerAdapter{
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/soapWS/*");
+        return new ServletRegistrationBean<>(servlet, "/WS/*");
     }
-    @Bean(name = "OnlinePaymentDetail")
+
+    @Bean(name = "PaymentDetail")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema PaymentSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("OnlinePaymentPort");
-        wsdl11Definition.setLocationUri("/soapWS");
+        wsdl11Definition.setLocationUri("/WS");
         wsdl11Definition.setTargetNamespace("http://onlinepayment.com/spring_boot_soap_example\"");
         wsdl11Definition.setSchema(PaymentSchema);
         return wsdl11Definition;
     }
     @Bean
-    public XsdSchema Payment() {
+    public XsdSchema PaymentSchema() {
 
         return new SimpleXsdSchema(new ClassPathResource("Payment.xsd"));
     }
 
 }
-

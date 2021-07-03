@@ -1,7 +1,9 @@
-package com.onlinepayment.onlinepaymentspringbootsoap.OnlinepaymentSpringbootExample.Repository;
+package com.onlinepayment.onlinepaymentspringbootsoap.OnlinepaymentSpringbootExample.repository;
 
+import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.onlinepaymentdetail.OnlinePaymentDetail;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
+
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -16,8 +18,8 @@ public class OnlinePaymentRepository {
         OnlinePaymentDetail detail = new OnlinePaymentDetail();
         detail.setRRN("RollNumber");
         onlinePaymentDetail.put(detail.getRRN(), detail);
-        detail.setBANK_CODE("BankDetail");
-        onlinePaymentDetail.put(detail.getBANK_CODE(), detail);
+        detail.setBANKCODE("BankDetail");
+        onlinePaymentDetail.put(detail.getBANKCODE(), detail);
         detail.setCARDNUMBER(1234567);
         detail.setLANACCOUNT("Accountdetail");
         onlinePaymentDetail.put(detail.getLANACCOUNT(), detail);
@@ -33,8 +35,9 @@ public class OnlinePaymentRepository {
         detail.setREINSTATED("Reinstated");
         onlinePaymentDetail.put(detail.getREINSTATED(), detail);
     }
+
     public OnlinePaymentDetail findOnlinePaymentDetail(String name) {
         Assert.notNull(name, "The country's name must not be null");
-        return OnlinePaymentDetail.get(name);
+        return onlinePaymentDetail.get(name);
     }
 }
