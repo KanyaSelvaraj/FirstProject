@@ -8,12 +8,13 @@
 
 package com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.paymentdetail;
 
+
 import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for paymentDetail.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
@@ -28,21 +29,19 @@ import javax.xml.bind.annotation.*;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "paymentDetail", propOrder = {
-        "rrn",
-        "custid",
-        "cardnumber",
-        "MSGDESCRIPTION",
-        "RESPONSECODE",
-        "AVAILLIMIT"
-
-})
-@XmlRootElement(name = "paymentDetail",namespace="http://onlinepayment.com/spring_boot_soap_example")
+@XmlType(name = "paymentDetail")
+//        "rrn",
+//        "custid",
+//        "cardnumber",
+//        "MSGDESCRIPTION",
+//        "RESPONSECODE",
+//        "AVAILLIMIT",
+//
+//})
+@XmlRootElement(name = "paymentDetail", namespace = "http://onlinepayment.com/spring_boot_soap_example")
 public class PaymentDetail {
-
 
     @XmlAttribute
     protected String rrn;
@@ -67,13 +66,15 @@ public class PaymentDetail {
 
         this.rrn = rrn;
     }
-    public int getCUSTID(){
+
+    public int getCUSTID() {
 
         return custid;
     }
-    public void setCUSTID(int value){
 
-        this.custid= value;
+    public void setCUSTID(int value) {
+
+        this.custid = value;
     }
 
     public int getCARDNYMBER() {

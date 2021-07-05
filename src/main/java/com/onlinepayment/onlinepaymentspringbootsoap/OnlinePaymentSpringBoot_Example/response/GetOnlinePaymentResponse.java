@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.*;
 public class GetOnlinePaymentResponse {
 
     @XmlElement(name = "PaymentDetail",required = true)
-    protected PaymentDetail PaymentDetail;
+//    protected PaymentDetail PaymentDetail;
     private com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.paymentdetail.PaymentDetail paymentDetail;
 
     /**
@@ -53,6 +53,7 @@ public class GetOnlinePaymentResponse {
      */
 
     public PaymentDetail getPaymentDetail() {
+
         return paymentDetail;
     }
     public void setPaymentDetail(PaymentDetail value) {
