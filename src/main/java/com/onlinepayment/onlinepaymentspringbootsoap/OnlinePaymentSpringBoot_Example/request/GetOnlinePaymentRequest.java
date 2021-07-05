@@ -34,7 +34,8 @@ import javax.xml.bind.annotation.*;
 @XmlType(name = "", propOrder = {
     "rrn"
 })
-@XmlRootElement(name = "getOnlinePaymentRequest")
+@XmlRootElement(name = "getOnlinePaymentRequest",namespace="http://onlinepayment.com/spring_boot_soap_example")
+
 public class GetOnlinePaymentRequest {
 
     @XmlElement(name = "RRN", required = true)
@@ -67,3 +68,5 @@ public class GetOnlinePaymentRequest {
     }
 
 }
+
+

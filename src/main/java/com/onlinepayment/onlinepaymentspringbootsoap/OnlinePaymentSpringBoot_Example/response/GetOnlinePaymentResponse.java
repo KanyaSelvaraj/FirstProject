@@ -8,7 +8,7 @@
 
 package com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.response;
 
-import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.onlinepaymentdetail.OnlinePaymentDetail;
+import com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.paymentdetail.PaymentDetail;
 
 import javax.xml.bind.annotation.*;
 
@@ -34,36 +34,32 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "onlinePaymentDetail"
+    "paymentDetail"
 })
 @XmlRootElement(name = "getOnlinePaymentResponse")
 public class GetOnlinePaymentResponse {
 
-    @XmlElement(required = true)
-    protected OnlinePaymentDetail onlinePaymentDetail;
+    @XmlElement(name = "PaymentDetail",required = true)
+    protected PaymentDetail PaymentDetail;
+    private com.onlinepayment.onlinepaymentspringbootsoap.OnlinePaymentSpringBoot_Example.paymentdetail.PaymentDetail paymentDetail;
 
     /**
-     * Gets the value of the onlinePaymentDetail property.
+     * Gets the value of the studentDetails property.
      *
      * @return
      *     possible object is
-     *     {@link OnlinePaymentDetail }
+     *     {@link PaymentDetail }
      *
      */
-    public OnlinePaymentDetail getOnlinePaymentDetail() {
-        return onlinePaymentDetail;
-    }
 
-    /**
-     * Sets the value of the onlinePaymentDetail property.
-     *
-     * @param value
-     *     allowed object is
-     *     {@link OnlinePaymentDetail }
-     *     
-     */
-    public void setOnlinePaymentDetail(OnlinePaymentDetail value) {
-        this.onlinePaymentDetail = value;
+    public PaymentDetail getPaymentDetail() {
+        return paymentDetail;
+    }
+    public void setPaymentDetail(PaymentDetail value) {
+        this.paymentDetail = value;
+
     }
 
 }
+
+
